@@ -17,29 +17,63 @@ import avatar from "../avatar.jpg";
 		<meta property="og:image" content="https://ktranish-com.vercel.app/_astro/avatar.DUfjh9EK_ONGPf.webp" />
 		<meta property="og:url" content="https://ktranish.com/" />
 		<meta name="twitter:card" content="summary_large_image" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 		<title>Kenny Tran - Full-Stack Developer for Hire</title>
 	</head>
 	<body>
-		<header>
-			<Image src={avatar} alt="Kenny Tran's Avatar" id="avatar" role="img" aria-label="Profile picture of Kenny Tran" />
-			<div class="badge">
-				<p class="badge__text">Available for hire!</p>
-				<div class="badge__status">
-					<span class="badge__status-circle"/>
-					<span class="badge__status-shadow"/>
+		<section aria-labelledby="site-intro">
+			<header id="site-intro">
+				<Image src={avatar} alt="Kenny Tran's Avatar" id="avatar" role="img" aria-label="Profile picture of Kenny Tran" />
+				<div class="badge">
+					<p class="badge__text">Available for hire!</p>
+					<div class="badge__status">
+						<span class="badge__status-circle"/>
+						<span class="badge__status-shadow"/>
+					</div>
 				</div>
-			</div>
-			<h1 class="header__title">Kenny Tran</h1>
-			<p class="header__description">
-				I am an experienced developer with a passion for creating scalable and maintainable solutions.
-			</p>
-			<div class="header__cta">
-				<a href="mailto:kenny.tran@adriveny.com">Get in touch</a>
-				<a href="https://github.com/ktranish" target="_blank">See my work &rarr;</a>
-			</div>
-		</header>
-		<main>
-			<section></section>
+				<h1 class="header__title">Kenny Tran</h1>
+				<p class="header__description">
+					I am an experienced developer with a passion for creating scalable and maintainable solutions.
+				</p>
+				<div class="header__cta">
+					<a href="mailto:kenny.tran@adriveny.com">Get in touch</a>
+					<a href="https://github.com/ktranish" target="_blank">See my work &rarr;</a>
+				</div>
+			</header>
+		</section>
+		<main>	
+			<!-- Work Experience Section -->
+			<section aria-labelledby="work-experience">
+				<h2 id="work-experience">Work Experience</h2>
+				<article class="work__item">
+					<header>
+						<h3>Fullstack developer</h3>
+						<p>Etteplan</p>
+					</header>
+					<time datetime="2024-03-01">Mar 2024</time>
+				</article>
+				<article class="work__item">
+					<header>
+						<h3>Frontend developer</h3>
+						<p>Telnect</p>
+					</header>
+					<time datetime="2023-02-01">Feb 2023</time>
+				</article>
+				<article class="work__item">
+					<header>
+						<h3>Wordpress developer</h3>
+						<p>Konverta</p>
+					</header>
+					<time datetime="2023-04-01">Apr 2022</time>
+				</article>
+				<article class="work__item">
+					<header>
+						<h3>Web developer</h3>
+						<p>Provsvaret</p>
+					</header>
+					<time datetime="2022-01-01">Jan 2022</time>
+				</article>
+			</section>
 		</main>
 	</body>
 </html>
@@ -62,7 +96,7 @@ import avatar from "../avatar.jpg";
 		hyphens: auto;
 	}
 
-	h1, p{
+	h1, h2, h3, p{
 		margin: 0;
 	}
 
@@ -71,8 +105,11 @@ import avatar from "../avatar.jpg";
 	}
 
 	body{
-		gap: 10rem;
+		row-gap: 2rem;
 		display: grid;
+		margin: 0 auto;
+		max-width: 80rem;
+		column-gap: 4rem;
 		padding: 5rem 2rem;
 		background-color: var(--zinc-900);
 	}
@@ -95,8 +132,8 @@ import avatar from "../avatar.jpg";
 		column-gap: 0.6rem;
 		align-items: center;
 		display: inline-flex;
-		border-radius: 9999px;
 		padding: 0.5rem 1rem;
+		border-radius: 9999px;
 		color: var(--zinc-200);
 		background-color: var(--zinc-700);
 	}
@@ -184,15 +221,93 @@ import avatar from "../avatar.jpg";
     background-color: var(--zinc-700);
 	}
 
+	main section h2{
+		margin-bottom: 2rem;
+		color: var(--zinc-200);
+	}
+
+	.work__item{
+		display: flex;
+		margin: 1.15rem 0;
+		position: relative;
+		align-items: start;
+		border-radius: 9999px;
+		color: var(--zinc-400);
+		padding: 1rem 2rem 1rem 5rem;
+		justify-content: space-between;
+		background-color: var(--zinc-800);
+		border: 1px solid var(--zinc-600);
+	}
+
+	.work__item::before {
+		top: 0.9rem;
+    width: 45px;
+    height: 45px;
+		display: flex;
+    left: 1.25rem;
+		font-weight: 600;
+		font-size: 1.15rem;
+		border-radius: 50%;
+		position: absolute;
+    align-items: center;
+		color: var(--zinc-200);
+    justify-content: center;
+		content: attr(aria-label);
+		border: 1px solid var(--zinc-500);
+		font-family: 'Font Awesome 5 Free';
+	}
+
+	.work__item:nth-child(2)::before {
+    content: "\f121"; /* Code icon for Fullstack Developer */
+	}
+
+	.work__item:nth-child(3)::before {
+		content: "\f1b2"; /* Design icon for Frontend Developer */
+	}
+
+	.work__item:nth-child(4)::before {
+		content: "\f013"; /* Gear icon for Wordpress Developer */
+	}
+
+	.work__item:nth-child(5)::before {
+		content: "\f0ac"; /* Globe icon for Web Developer */
+	}
+
+	.work__item header{
+		display: flex;
+		row-gap: 0.15rem;
+		flex-direction: column;
+	}
+
+	.work__item header h3{
+		font-weight: 400;
+		font-size: 1.05rem;
+	}
+
+	.work__item header p{
+		font-weight: 600;
+		font-size: 0.95rem;
+	}
+
+	.work__item time{
+		margin-top: 0.25rem;
+	}
+
 	@media (min-width: 1440px) {
 		body{
 			grid-template-columns: repeat(2, minmax(0, 1fr));
 		}
 	}
 
+	@media (max-width: 1440px) {
+		.header__cta{
+			flex-direction: column;
+		}
+	}
+
 	@media (max-width: 768px) {
 		body{
-			padding: 2rem 0.75rem;
+			padding: 2rem 1.25rem;
 		}
 
 		#avatar{
@@ -210,12 +325,21 @@ import avatar from "../avatar.jpg";
 			font-size: 1.25rem;
 		}
 
-		.header__cta{
-			flex-direction: column;
-		}
-
 		.header__cta a{
 			border-radius: 5px;
+		}
+
+		.work__item{
+			border-radius: 5px;
+			padding: 1rem 2rem 1rem 4.5rem;
+		}
+
+		.work__item::before {
+			left: 0.8rem;
+		}
+
+		.work__item time{
+			display: none;
 		}
 	}
 
