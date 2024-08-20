@@ -45,34 +45,89 @@ import avatar from "../avatar.jpg";
 			<!-- Work Experience Section -->
 			<section aria-labelledby="work-experience">
 				<h2 id="work-experience">Work Experience</h2>
-				<article class="work__item">
+				<article>
 					<header>
 						<h3>Fullstack developer</h3>
 						<p>Etteplan</p>
 					</header>
 					<time datetime="2024-03-01">Mar 2024</time>
 				</article>
-				<article class="work__item">
+				<article>
 					<header>
 						<h3>Frontend developer</h3>
 						<p>Telnect</p>
 					</header>
 					<time datetime="2023-02-01">Feb 2023</time>
 				</article>
-				<article class="work__item">
+				<article>
 					<header>
 						<h3>Wordpress developer</h3>
 						<p>Konverta</p>
 					</header>
 					<time datetime="2023-04-01">Apr 2022</time>
 				</article>
-				<article class="work__item">
+				<article>
 					<header>
 						<h3>Web developer</h3>
 						<p>Provsvaret</p>
 					</header>
 					<time datetime="2022-01-01">Jan 2022</time>
 				</article>
+			</section>
+
+			<!-- Certificates Section -->
+			<section aria-labelledby="certificates">
+				<h2 id="certificates">Certificates</h2>
+				<a href="https://credentials.edx.org/credentials/5cc40f2a92b74f27bc3c326004d5b7f8/" target="_blank">
+					<article>
+						<header>
+							<h3>Verified Certificate for Full Stack Cloud Developer</h3>
+							<p>EDX</p>
+						</header>
+						<time datetime="2024-03-01">Dec 2023</time>
+					</article>
+				</a>
+				<a href="https://www.credential.net/ef76b313-a06d-414d-8146-a20cadce0a6b" target="_blank">
+					<article>
+						<header>
+							<h3>Techdegree in Full Stack JavaScript</h3>
+							<p>Treehouse</p>
+						</header>
+						<time datetime="2023-02-01">Jan 2021</time>
+					</article>
+				</a>
+			</section>
+
+			<!-- Primary Stack Section -->
+			<section aria-labelledby="primary-stack">
+				<h2 id="primary-stack">Primary stack</h2>
+				<a href="https://nextjs.org/" target="_blank">
+					<article>
+						<header>
+							<h3>React framework</h3>
+							<p>Next.js</p>
+						</header>
+						<time datetime="2021-05-01">May 2021</time>
+					</article>
+				</a>
+				<a href="https://tailwindcss.com/" target="_blank">
+					<article>
+						<header>
+							<h3>CSS framework</h3>
+							<p>Tailwind CSS</p>
+						</header>
+						<time datetime="2020-12-01">Dec 2020</time>
+					</article>
+				</a>
+				<a href="https://expressjs.com/" target="_blank">
+					<article>
+						<header>
+							<h3>Node.js framework</h3>
+							<p>Express.js</p>
+						</header>
+						<time datetime="2021-08-01">Aug 2021</time>
+					</article>
+				</a>
 			</section>
 		</main>
 	</body>
@@ -105,13 +160,18 @@ import avatar from "../avatar.jpg";
 	}
 
 	body{
-		row-gap: 2rem;
+		gap: 4rem;
 		display: grid;
 		margin: 0 auto;
 		max-width: 80rem;
-		column-gap: 4rem;
 		padding: 5rem 2rem;
 		background-color: var(--zinc-900);
+	}
+
+	main{
+		display: flex;
+		row-gap: 3rem;
+		flex-direction: column;
 	}
 
 	#avatar{
@@ -221,25 +281,34 @@ import avatar from "../avatar.jpg";
     background-color: var(--zinc-700);
 	}
 
+	main section a{
+		text-decoration: none;
+	}
+
 	main section h2{
 		margin-bottom: 2rem;
 		color: var(--zinc-200);
 	}
 
-	.work__item{
+	main section article{
 		display: flex;
+		cursor: pointer;
 		margin: 1.15rem 0;
 		position: relative;
 		align-items: start;
 		border-radius: 9999px;
-		color: var(--zinc-400);
+		color: var(--zinc-300);
 		padding: 1rem 2rem 1rem 5rem;
 		justify-content: space-between;
 		background-color: var(--zinc-800);
-		border: 1px solid var(--zinc-600);
+		border: 1px solid var(--zinc-700);
 	}
 
-	.work__item::before {
+	main section article:hover{
+		background-color: var(--zinc-700);
+	}
+
+	main section article::before {
 		top: 0.9rem;
     width: 45px;
     height: 45px;
@@ -257,38 +326,42 @@ import avatar from "../avatar.jpg";
 		font-family: 'Font Awesome 5 Free';
 	}
 
-	.work__item:nth-child(2)::before {
+	main section article:nth-child(2)::before {
     content: "\f121"; /* Code icon for Fullstack Developer */
 	}
 
-	.work__item:nth-child(3)::before {
+	main section article:nth-child(3)::before {
 		content: "\f1b2"; /* Design icon for Frontend Developer */
 	}
 
-	.work__item:nth-child(4)::before {
+	main section article:nth-child(4)::before {
 		content: "\f013"; /* Gear icon for Wordpress Developer */
 	}
 
-	.work__item:nth-child(5)::before {
+	main section article:nth-child(5)::before {
 		content: "\f0ac"; /* Globe icon for Web Developer */
 	}
 
-	.work__item header{
+	main section:not(:nth-child(1)) article::before{
+		content: "\f08e";
+	}
+
+	main section article header{
 		display: flex;
 		row-gap: 0.15rem;
 		flex-direction: column;
 	}
 
-	.work__item header h3{
+	main section article header h3{
 		font-weight: 300;
 		font-size: 1.05rem;
 	}
 
-	.work__item header p{
+	main section article header p{
 		font-size: 0.95rem;
 	}
 
-	.work__item time{
+	main section article time{
 		margin-top: 0.25rem;
 	}
 
@@ -328,16 +401,16 @@ import avatar from "../avatar.jpg";
 			border-radius: 5px;
 		}
 
-		.work__item{
+		main section article{
 			border-radius: 5px;
 			padding: 1rem 2rem 1rem 4.5rem;
 		}
 
-		.work__item::before {
+		main section article::before {
 			left: 0.8rem;
 		}
 
-		.work__item time{
+		main section article time{
 			display: none;
 		}
 	}
