@@ -1,0 +1,237 @@
+---
+import { Image } from 'astro:assets';
+import avatar from "../avatar.jpg";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Kenny Tran, a skilled full-stack developer with experience in modern web development. Available for hire. Contact me for more details." />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="keywords" content="Kenny Tran, full-stack developer, web development, hire developer, front-end, back-end, javascript, react, node.js" />
+		<meta name="author" content="Kenny Tran" />
+		<meta property="og:title" content="Kenny Tran - Full-Stack Developer for Hire" />
+		<meta property="og:description" content="Experienced full-stack developer with a passion for building scalable solutions. Available for hire." />
+		<meta property="og:url" content="https://ktranish.com/" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<title>Kenny Tran - Full-Stack Developer for Hire</title>
+	</head>
+	<body>
+		<header>
+			<Image src={avatar} alt="Kenny Tran's Avatar" id="avatar" role="img" aria-label="Profile picture of Kenny Tran" />
+			<div class="badge">
+				<p class="badge__text">Available for hire!</p>
+				<div class="badge__status">
+					<span class="badge__status-circle"/>
+					<span class="badge__status-shadow"/>
+				</div>
+			</div>
+			<h1 class="header__title">Kenny Tran</h1>
+			<p class="header__description">
+				I am an experienced developer with a passion for creating scalable and maintainable solutions.
+			</p>
+			<div class="header__cta">
+				<a href="mailto:kenny.tran@adriveny.com">Get in touch</a>
+				<a href="https://github.com/ktranish" target="_blank">See my work &rarr;</a>
+			</div>
+		</header>
+		<main>
+			<section></section>
+		</main>
+	</body>
+</html>
+
+<style>
+	:root {
+		--zinc-900: #18181b;
+		--zinc-800: #27272a;
+		--zinc-700: #3f3f46;
+		--zinc-600: #52525b;
+		--zinc-500: #71717a;
+		--zinc-400: #a1a1aa;
+		--zinc-300: #d4d4d8;
+		--zinc-200: #e4e4e7;
+		--zinc-100: #f4f4f5;
+		--zinc-50: #fafafa;
+	}
+
+	*{
+		hyphens: auto;
+	}
+
+	h1, p{
+		margin: 0;
+	}
+
+	html{
+		font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+	}
+
+	body{
+		gap: 10rem;
+		display: grid;
+		padding: 5rem 2rem;
+		background-color: var(--zinc-900);
+	}
+
+	#avatar{
+		width: 15rem;
+		height: 15rem;
+		display: block;
+		cursor: pointer;
+		border-radius: 20px;
+	}
+
+	#avatar:hover {
+    transform: scale(1.05);
+	}
+
+	.badge{
+		cursor: pointer;
+		margin-top: 2.5rem;
+		column-gap: 0.6rem;
+		align-items: center;
+		display: inline-flex;
+		border-radius: 9999px;
+		padding: 0.5rem 1rem;
+		color: var(--zinc-200);
+		background-color: var(--zinc-700);
+	}
+
+	.badge:hover {
+    background-color: var(--zinc-600);
+	}
+
+	.badge__text{
+		font-size: 1rem;
+	}
+
+	.badge__status{
+		width: 13px;
+		height: 13px;
+		position: relative;
+	}
+
+	.badge__status-circle, .badge__status-shadow{
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		position: absolute;
+		background-color: lightgreen;
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		*{
+			transition-duration: 300ms;
+			transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		}
+
+  	.badge__status-shadow{
+			animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+		}
+	}
+
+	.header__title, .header__description{
+		color: var(--zinc-200);
+	}
+
+	.header__title{
+		font-size: 5rem;
+		margin: 1rem 0 0.5rem -0.3rem;
+	}
+
+	.header__description{
+		max-width: 32rem;
+		font-size: 1.5rem;
+		line-height: 2.05rem;
+	}
+
+	.header__cta{
+		gap: 1rem;
+		display: flex;
+		margin-top: 2.5rem;
+	}
+
+	.header__cta a{
+		border: none;
+		cursor: pointer;
+		font-size: 1.05rem;
+		text-align: center;
+		text-decoration: none;
+		border-radius: 9999px;
+		padding: 0.75rem 1.25rem;
+	}
+
+	.header__cta a:nth-child(1){
+		color: var(--zinc-900);
+		background-color: var(--zinc-300)
+	}
+
+	.header__cta a:nth-child(2){
+		color: var(--zinc-200);
+		border: 1px solid var(--zinc-500);
+	}
+
+	.header__cta a:nth-child(1):hover {
+    background-color: var(--zinc-50);
+	}
+
+	.header__cta a:nth-child(2):hover {
+		color: var(--zinc-100);
+    background-color: var(--zinc-700);
+	}
+
+	@media (min-width: 1440px) {
+		body{
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	@media (max-width: 768px) {
+		body{
+			padding: 2rem 0.75rem;
+		}
+
+		#avatar{
+			width: 4rem;
+			height: 4rem;
+			border-radius: 9999px;
+		}
+
+		.header__title{
+			font-size: 4rem;
+			margin: 1rem 0 0.5rem -0.2rem;
+		}
+
+		.header__description{
+			font-size: 1.25rem;
+		}
+
+		.header__cta{
+			flex-direction: column;
+		}
+
+		.header__cta a{
+			border-radius: 5px;
+		}
+	}
+
+	@media (max-width: 480px) {
+    .header__title {
+			font-size: 3rem; /* Smaller title on very small screens */
+    }
+
+    .header__description {
+			font-size: 1rem; /* Smaller description text on mobile */
+    }
+	}
+
+	@keyframes ping {
+		75%, 100% {
+			opacity: 0;
+			transform: scale(2);
+		}
+	}
+</style>
