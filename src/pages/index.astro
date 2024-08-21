@@ -236,7 +236,7 @@ import avatar from "../avatar.jpg";
 	}
 
 	@media (prefers-reduced-motion: no-preference) {
-		*{
+		*, *::before{
 			transition-duration: 300ms;
 			transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 		}
@@ -306,7 +306,6 @@ import avatar from "../avatar.jpg";
 	}
 
 	main section article{
-		cursor: pointer;
 		margin: 1.15rem 0;
 		position: relative;
 		border-radius: 9999px;
@@ -314,10 +313,6 @@ import avatar from "../avatar.jpg";
 		padding: 1rem 2rem 1rem 5rem;
 		background-color: var(--zinc-800);
 		border: 1px solid var(--zinc-700);
-	}
-
-	main section article:hover{
-		background-color: var(--zinc-700);
 	}
 
 	main section article::before {
@@ -334,8 +329,12 @@ import avatar from "../avatar.jpg";
 		color: var(--zinc-200);
     justify-content: center;
 		content: attr(aria-label);
-		border: 1px solid var(--zinc-500);
+		border: 1px solid var(--zinc-600);
 		font-family: 'Font Awesome 5 Free';
+	}
+
+	main section article:hover, main section article:hover::before{
+		border: 1px solid var(--zinc-400);
 	}
 
 	main section article:nth-child(2)::before {
@@ -352,6 +351,10 @@ import avatar from "../avatar.jpg";
 
 	main section article:nth-child(5)::before {
 		content: "\f0ac"; /* Globe icon for Web Developer */
+	}
+
+	main section:not(:nth-child(1)) article{
+		cursor: pointer;
 	}
 
 	main section:not(:nth-child(1)) article::before{
