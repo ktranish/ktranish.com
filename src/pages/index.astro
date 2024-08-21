@@ -47,31 +47,39 @@ import avatar from "../avatar.jpg";
 				<h2 id="work-experience">Work Experience</h2>
 				<article>
 					<header>
-						<h3>Fullstack developer</h3>
+						<div>
+							<h3>Fullstack developer</h3>
+							<time datetime="2024-03-01">Mar 2024</time>
+						</div>
 						<p>Etteplan</p>
 					</header>
-					<time datetime="2024-03-01">Mar 2024</time>
 				</article>
 				<article>
 					<header>
-						<h3>Frontend developer</h3>
+						<div>
+							<h3>Frontend developer</h3>
+							<time datetime="2023-02-01">Feb 2023</time>
+						</div>
 						<p>Telnect</p>
 					</header>
-					<time datetime="2023-02-01">Feb 2023</time>
 				</article>
 				<article>
 					<header>
-						<h3>Wordpress developer</h3>
+						<div>
+							<h3>Wordpress developer</h3>
+							<time datetime="2023-04-01">Apr 2022</time>
+						</div>
 						<p>Konverta</p>
 					</header>
-					<time datetime="2023-04-01">Apr 2022</time>
 				</article>
 				<article>
 					<header>
-						<h3>Web developer</h3>
+						<div>
+							<h3>Web developer</h3>
+							<time datetime="2022-01-01">Jan 2022</time>
+						</div>
 						<p>Provsvaret</p>
 					</header>
-					<time datetime="2022-01-01">Jan 2022</time>
 				</article>
 			</section>
 
@@ -81,19 +89,23 @@ import avatar from "../avatar.jpg";
 				<a href="https://credentials.edx.org/credentials/5cc40f2a92b74f27bc3c326004d5b7f8/" target="_blank">
 					<article>
 						<header>
-							<h3>Verified Certificate for Full Stack Cloud Developer</h3>
+							<div>
+								<h3>Verified Certificate for Full Stack Cloud Developer</h3>
+								<time datetime="2024-03-01">Dec 2023</time>
+							</div>
 							<p>EDX</p>
 						</header>
-						<time datetime="2024-03-01">Dec 2023</time>
 					</article>
 				</a>
 				<a href="https://www.credential.net/ef76b313-a06d-414d-8146-a20cadce0a6b" target="_blank">
 					<article>
 						<header>
-							<h3>Techdegree in Full Stack JavaScript</h3>
+							<div>
+								<h3>Techdegree in Full Stack JavaScript</h3>
+								<time datetime="2023-02-01">Jan 2021</time>
+							</div>
 							<p>Treehouse</p>
 						</header>
-						<time datetime="2023-02-01">Jan 2021</time>
 					</article>
 				</a>
 			</section>
@@ -104,28 +116,31 @@ import avatar from "../avatar.jpg";
 				<a href="https://nextjs.org/" target="_blank">
 					<article>
 						<header>
-							<h3>React framework</h3>
+							<div>
+								<h3>React framework</h3>
+							</div>
 							<p>Next.js</p>
 						</header>
-						<time datetime="2021-05-01">May 2021</time>
 					</article>
 				</a>
 				<a href="https://tailwindcss.com/" target="_blank">
 					<article>
 						<header>
-							<h3>CSS framework</h3>
+							<div>
+								<h3>CSS framework</h3>
+							</div>
 							<p>Tailwind CSS</p>
 						</header>
-						<time datetime="2020-12-01">Dec 2020</time>
 					</article>
 				</a>
 				<a href="https://expressjs.com/" target="_blank">
 					<article>
 						<header>
-							<h3>Node.js framework</h3>
+							<div>
+								<h3>Node.js framework</h3>
+							</div>
 							<p>Express.js</p>
 						</header>
-						<time datetime="2021-08-01">Aug 2021</time>
 					</article>
 				</a>
 			</section>
@@ -291,15 +306,12 @@ import avatar from "../avatar.jpg";
 	}
 
 	main section article{
-		display: flex;
 		cursor: pointer;
 		margin: 1.15rem 0;
 		position: relative;
-		align-items: start;
 		border-radius: 9999px;
 		color: var(--zinc-300);
 		padding: 1rem 2rem 1rem 5rem;
-		justify-content: space-between;
 		background-color: var(--zinc-800);
 		border: 1px solid var(--zinc-700);
 	}
@@ -352,20 +364,27 @@ import avatar from "../avatar.jpg";
 		flex-direction: column;
 	}
 
-	main section article header h3{
+	main section article header div{
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	main section article header div h3{
 		font-weight: 300;
 		font-size: 1.05rem;
 		opacity: 70%;
 	}
 
+	main section article div time{
+		font-size: 0.85rem;
+		margin-top: 0.275rem;
+	}
+
 	main section article header p{
 		font-size: 0.95rem;
 		color: var(--zinc-100);
-	}
-
-	main section article time{
-		font-size: 0.85rem;
-		margin-top: 0.2rem;
 	}
 
 	@media (min-width: 1440px) {
@@ -413,7 +432,7 @@ import avatar from "../avatar.jpg";
 			left: 0.8rem;
 		}
 
-		main section article time{
+		main section article header div time{
 			display: none;
 		}
 	}
