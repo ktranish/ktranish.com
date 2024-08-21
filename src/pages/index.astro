@@ -47,39 +47,31 @@ import avatar from "../avatar.jpg";
 				<h2 id="work-experience">Work Experience</h2>
 				<article>
 					<header>
-						<div>
-							<h3>Fullstack developer</h3>
-							<time datetime="2024-03-01">Mar 2024</time>
-						</div>
-						<p>Etteplan</p>
+						<h3>Fullstack developer</h3>
+						<time datetime="2024-03-01">Mar 2024</time>
 					</header>
+					<p>Etteplan</p>
 				</article>
 				<article>
 					<header>
-						<div>
-							<h3>Frontend developer</h3>
-							<time datetime="2023-02-01">Feb 2023</time>
-						</div>
-						<p>Telnect</p>
+						<h3>Frontend developer</h3>
+						<time datetime="2023-02-01">Feb 2023</time>
 					</header>
+					<p>Telnect</p>
 				</article>
 				<article>
 					<header>
-						<div>
-							<h3>Wordpress developer</h3>
-							<time datetime="2023-04-01">Apr 2022</time>
-						</div>
-						<p>Konverta</p>
+						<h3>Wordpress developer</h3>
+						<time datetime="2023-04-01">Apr 2022</time>
 					</header>
+					<p>Konverta</p>
 				</article>
 				<article>
 					<header>
-						<div>
-							<h3>Web developer</h3>
-							<time datetime="2022-01-01">Jan 2022</time>
-						</div>
-						<p>Provsvaret</p>
+						<h3>Web developer</h3>
+						<time datetime="2022-01-01">Jan 2022</time>
 					</header>
+					<p>Provsvaret</p>
 				</article>
 			</section>
 
@@ -89,23 +81,19 @@ import avatar from "../avatar.jpg";
 				<a href="https://credentials.edx.org/credentials/5cc40f2a92b74f27bc3c326004d5b7f8/" target="_blank">
 					<article>
 						<header>
-							<div>
-								<h3>Verified Certificate for Full Stack Cloud Developer</h3>
-								<time datetime="2024-03-01">Dec 2023</time>
-							</div>
-							<p>EDX</p>
+							<h3>Verified Certificate for Full Stack Cloud Developer</h3>
+							<time datetime="2024-03-01">Dec 2023</time>
 						</header>
+						<p>EDX</p>
 					</article>
 				</a>
 				<a href="https://www.credential.net/ef76b313-a06d-414d-8146-a20cadce0a6b" target="_blank">
 					<article>
 						<header>
-							<div>
-								<h3>Techdegree in Full Stack JavaScript</h3>
-								<time datetime="2023-02-01">Jan 2021</time>
-							</div>
-							<p>Treehouse</p>
+							<h3>Techdegree in Full Stack JavaScript</h3>
+							<time datetime="2023-02-01">Jan 2021</time>
 						</header>
+						<p>Treehouse</p>
 					</article>
 				</a>
 			</section>
@@ -116,31 +104,25 @@ import avatar from "../avatar.jpg";
 				<a href="https://nextjs.org/" target="_blank">
 					<article>
 						<header>
-							<div>
-								<h3>React framework</h3>
-							</div>
-							<p>Next.js</p>
+							<h3>React framework</h3>
 						</header>
+						<p>Next.js</p>
 					</article>
 				</a>
 				<a href="https://tailwindcss.com/" target="_blank">
 					<article>
 						<header>
-							<div>
-								<h3>CSS framework</h3>
-							</div>
-							<p>Tailwind CSS</p>
+							<h3>CSS framework</h3>
 						</header>
+						<p>Tailwind CSS</p>
 					</article>
 				</a>
 				<a href="https://expressjs.com/" target="_blank">
 					<article>
 						<header>
-							<div>
-								<h3>Node.js framework</h3>
-							</div>
-							<p>Express.js</p>
+							<h3>Node.js framework</h3>
 						</header>
+						<p>Express.js</p>
 					</article>
 				</a>
 			</section>
@@ -164,6 +146,10 @@ import avatar from "../avatar.jpg";
 
 	*{
 		hyphens: auto;
+	}
+
+	a{
+		text-decoration: none;
 	}
 
 	h1, h2, h3, p{
@@ -296,10 +282,6 @@ import avatar from "../avatar.jpg";
     background-color: var(--zinc-700);
 	}
 
-	main section a{
-		text-decoration: none;
-	}
-
 	main section h2{
 		margin-bottom: 2rem;
 		color: var(--zinc-200);
@@ -361,31 +343,31 @@ import avatar from "../avatar.jpg";
 		content: "\f08e";
 	}
 
-	main section article header{
+	main section article{
 		display: flex;
 		row-gap: 0.15rem;
 		flex-direction: column;
 	}
 
-	main section article header div{
+	main section article header{
 		width: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 	}
 
-	main section article header div h3{
+	main section article header h3{
 		font-weight: 300;
 		font-size: 1.05rem;
 		opacity: 70%;
 	}
 
-	main section article div time{
+	main section article header time{
 		font-size: 0.85rem;
 		margin-top: 0.275rem;
 	}
 
-	main section article header p{
+	main section article p{
 		font-size: 0.95rem;
 		color: var(--zinc-100);
 	}
@@ -435,7 +417,7 @@ import avatar from "../avatar.jpg";
 			left: 0.8rem;
 		}
 
-		main section article header div time{
+		main section article header time{
 			display: none;
 		}
 	}
