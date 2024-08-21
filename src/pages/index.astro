@@ -172,6 +172,7 @@ import avatar from "../avatar.jpg";
 	main{
 		display: flex;
 		row-gap: 3rem;
+		overflow: hidden;
 		flex-direction: column;
 	}
 
@@ -357,9 +358,12 @@ import avatar from "../avatar.jpg";
 	}
 
 	main section article header h3{
-		font-weight: 300;
-		font-size: 1.05rem;
 		opacity: 70%;
+		font-weight: 300;
+		overflow: hidden;
+		font-size: 1.05rem;
+		white-space: nowrap;
+		text-overflow: ellipsis;
 	}
 
 	main section article header time{
